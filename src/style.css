@@ -1,3 +1,11 @@
-h1 {
-  color: aqua;
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  padding-right: 50px;
+}
+
+.navigation-icon {
+  font-size: 50px;
 }
