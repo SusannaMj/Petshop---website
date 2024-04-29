@@ -9,3 +9,7 @@ nav li {
 .navigation-icon {
   font-size: 50px;
 }
+
+.product-image {
+  max-width: 300px;
+}
