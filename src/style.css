@@ -13,3 +13,27 @@ nav li {
 .product-image {
   max-width: 300px;
 }
+
+.dropdownMenu {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  background-color: wheat;
+}
+
+.show {
+  display: block;
+}
+
+.dropdown-content a {
+  text-decoration: none;
+  display: block;
+  padding: 30px;
+}
+
+.dropdown-content a:hover {
+  cursor: pointer;
+}
