@@ -18,22 +18,25 @@ nav li {
   position: relative;
   display: inline-block;
 }
-.dropdown-content {
+.dropdown-contents {
   position: absolute;
   display: none;
   background-color: wheat;
+  z-index: 1000;
+  width: 100%;
 }
 
 .show {
   display: block;
 }
 
-.dropdown-content a {
+.dropdown-contents a {
   text-decoration: none;
   display: block;
   padding: 30px;
 }
 
-.dropdown-content a:hover {
+.dropdown-contents a:hover {
   cursor: pointer;
+  background-color: rgb(193, 192, 192);
 }
