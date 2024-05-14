@@ -30,6 +30,21 @@ nav li {
   display: block;
 }
 
+.shopping-cart-items {
+  position: relative;
+  display: inline-block;
+}
+.shopping-cart {
+  position: relative;
+  display: none;
+  background-color: wheat;
+  z-index: 1000;
+}
+
+.show-cart {
+  display: block;
+}
+
 .dropdown-contents a {
   text-decoration: none;
   display: block;
@@ -39,4 +54,16 @@ nav li {
 .dropdown-contents a:hover {
   cursor: pointer;
   background-color: rgb(193, 192, 192);
+}
+
+select {
+  display: block;
+  padding: 5px;
+  border-radius: 1px solid black;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.product-image-cart {
+  width: 20%;
 }
