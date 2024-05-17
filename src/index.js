@@ -12,6 +12,17 @@ function showCart() {
     .classList.toggle("show-cart");
 }
 
+let removeButtons = document.getElementsByClassName("remove-button");
+
+for (let i = 0; i < removeButtons.length; i++) {
+  let removeButton = removeButtons[i];
+
+  removeButton.addEventListener("click", function (event) {
+    let clickedRemoveButton = event.target;
+    clickedRemoveButton.parentElement.remove();
+  });
+}
+
 function like(x) {
   if (x.classList.contains("fa-regular")) {
     x.classList.remove("fa-regular");
