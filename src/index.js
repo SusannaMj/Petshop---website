@@ -49,7 +49,7 @@ function updateCartTotal() {
   }
   let totalElement = document.getElementsByClassName("cart-total")[0];
 
-  totalElement.innerHTML = total;
+  totalElement.innerHTML = Math.round(total * 100) / 100;
 }
 
 function removeCartItem(event) {
