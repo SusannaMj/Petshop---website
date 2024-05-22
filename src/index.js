@@ -33,8 +33,14 @@ function updateCartTotal() {
     total = total + price * quantity;
   }
   let totalElement = document.getElementsByClassName("cart-total")[0];
-  console.log(totalElement);
+
   totalElement.innerHTML = total;
+}
+
+function removeCartItem(event) {
+  let clickedRemoveButton = event.target;
+  clickedRemoveButton.parentElement.remove();
+  updateCartTotal();
 }
 
 let removeButtons = document.getElementsByClassName("remove-button");
@@ -42,11 +48,7 @@ let removeButtons = document.getElementsByClassName("remove-button");
 for (let i = 0; i < removeButtons.length; i++) {
   let removeButton = removeButtons[i];
 
-  removeButton.addEventListener("click", function (event) {
-    let clickedRemoveButton = event.target;
-    clickedRemoveButton.parentElement.remove();
-    updateCartTotal();
-  });
+  removeButton.addEventListener("click", removeCartItem);
 }
 
 function like(x) {
