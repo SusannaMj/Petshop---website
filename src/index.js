@@ -12,6 +12,21 @@ function showCart() {
     .classList.toggle("show-cart");
 }
 
+function changeItemQuantity(event) {
+  let input = event.target;
+  if (input.value < 0 || isNaN(input.value)) {
+    input.value = 1;
+  } else {
+    updateCartTotal();
+  }
+}
+
+var itemQuantity = document.getElementsByClassName("item-quantity");
+for (let i = 0; i < itemQuantity.length; i++) {
+  let quantityInput = itemQuantity[i];
+  quantityInput.addEventListener("change", changeItemQuantity);
+}
+
 function updateCartTotal() {
   let cartItemsContainer = document.getElementsByClassName(
     "container-cart-items"
