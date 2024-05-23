@@ -66,6 +66,21 @@ for (let i = 0; i < removeButtons.length; i++) {
   removeButton.addEventListener("click", removeCartItem);
 }
 
+function addItemToCart(event) {
+  let button = event.target;
+  let shopItem = button.parentElement;
+  let price = shopItem.getElementsByClassName("item-price")[0].innerHTML;
+  let title = shopItem.getElementsByClassName("item-title")[0].innerHTML;
+  let image = shopItem.getElementsByClassName("product-image")[0].src;
+  console.log(price, title, image);
+}
+
+let addToCartButton = document.getElementsByClassName("add-to-cart-button");
+for (let i = 0; i < addToCartButton.length; i++) {
+  let button = addToCartButton[i];
+  button.addEventListener("click", addItemToCart);
+}
+
 function like(x) {
   if (x.classList.contains("fa-regular")) {
     x.classList.remove("fa-regular");
