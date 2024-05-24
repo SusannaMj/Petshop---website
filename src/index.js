@@ -66,19 +66,49 @@ for (let i = 0; i < removeButtons.length; i++) {
   removeButton.addEventListener("click", removeCartItem);
 }
 
-function addItemToCart(event) {
+function addButtonClicked(event) {
   let button = event.target;
   let shopItem = button.parentElement;
   let price = shopItem.getElementsByClassName("item-price")[0].innerHTML;
   let title = shopItem.getElementsByClassName("item-title")[0].innerHTML;
   let image = shopItem.getElementsByClassName("product-image")[0].src;
-  console.log(price, title, image);
+  addItemToCart(price, title, image);
+}
+
+function addItemToCart(price, title, image) {
+  let cartRow = document.createElement("div");
+  let cartItem = document.getElementsByClassName("container-cart-items")[0];
+  cartRow.classList.add("row", "cart-item");
+  let cartItemContainer = ` <div >
+                  <hr />
+                  <div class="d-flex col-8" id="product">
+                    <img
+                      src="${image}";
+                      class="img-fluid product-image-cart"
+                    />
+                    <p>${title}</p>
+                    <h3 class="cart-price">${price}</h3>
+                  </div>
+                  <div class="col-2 quantity">
+                    <input
+                      type="number"
+                      class="item-quantity"
+                      name="quantity"
+                      value="1"
+                    />
+                  </div>
+                  <div class="col-2 total">A$100</div>
+                  <button class="remove-button">remove</button>
+                </div>`;
+
+  cartRow.innerHTML = cartItemContainer;
+  cartItem.append(cartRow);
 }
 
 let addToCartButton = document.getElementsByClassName("add-to-cart-button");
 for (let i = 0; i < addToCartButton.length; i++) {
   let button = addToCartButton[i];
-  button.addEventListener("click", addItemToCart);
+  button.addEventListener("click", addButtonClicked);
 }
 
 function like(x) {
