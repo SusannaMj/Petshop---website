@@ -80,7 +80,7 @@ function addItemToCart(price, title, image) {
   let cartItem = document.getElementsByClassName("container-cart-items")[0];
   cartRow.classList.add("cart-item");
   let cartItemContainer = ` 
-                  <div class="d-flex col-8" id="product">
+                  <div class="d-flex col-6" id="product">
                     <img
                       src="${image}";
                       class="img-fluid product-image-cart"
@@ -88,7 +88,7 @@ function addItemToCart(price, title, image) {
                     <p>${title}</p>
                     <h3 class="cart-price">${price}</h3>
                   </div>
-                  <div class="col-1 quantity">
+                  <div class="col-2 quantity">
                     <input
                       type="number"
                       class="item-quantity"
@@ -97,7 +97,7 @@ function addItemToCart(price, title, image) {
                     />
                   </div>
                 
-                  <div class="col-1 total">A$100</div>
+                  <div class="col-2 total">A$100</div>
                   <button class="col-2 remove-button">remove</button>
                   
                `;
