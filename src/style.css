@@ -32,7 +32,6 @@ nav li {
 
 .shopping-cart-items {
   position: relative;
-  display: inline-block;
 }
 .shopping-cart {
   position: relative;
@@ -66,4 +65,8 @@ select {
 
 .product-image-cart {
   width: 20%;
+}
+
+.cart-item {
+  display: inline-flex;
 }

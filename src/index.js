@@ -78,9 +78,8 @@ function addButtonClicked(event) {
 function addItemToCart(price, title, image) {
   let cartRow = document.createElement("div");
   let cartItem = document.getElementsByClassName("container-cart-items")[0];
-  cartRow.classList.add("row", "cart-item");
-  let cartItemContainer = ` <div >
-                  <hr />
+  cartRow.classList.add("cart-item");
+  let cartItemContainer = ` 
                   <div class="d-flex col-8" id="product">
                     <img
                       src="${image}";
@@ -89,7 +88,7 @@ function addItemToCart(price, title, image) {
                     <p>${title}</p>
                     <h3 class="cart-price">${price}</h3>
                   </div>
-                  <div class="col-2 quantity">
+                  <div class="col-1 quantity">
                     <input
                       type="number"
                       class="item-quantity"
@@ -97,9 +96,11 @@ function addItemToCart(price, title, image) {
                       value="1"
                     />
                   </div>
-                  <div class="col-2 total">A$100</div>
-                  <button class="remove-button">remove</button>
-                </div>`;
+                
+                  <div class="col-1 total">A$100</div>
+                  <button class="col-2 remove-button">remove</button>
+                  
+               `;
 
   cartRow.innerHTML = cartItemContainer;
   cartItem.append(cartRow);
