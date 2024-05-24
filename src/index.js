@@ -78,11 +78,12 @@ function addButtonClicked(event) {
 function addItemToCart(price, title, image) {
   let cartRow = document.createElement("div");
   let cartItem = document.getElementsByClassName("container-cart-items")[0];
-  cartRow.classList.add("cart-item");
-  let cartItemContainer = ` 
-                  <div class="d-flex col-6" id="product">
+  cartRow.classList.add("container-cart-items");
+  let cartItemContainer = `  <div class="row cart-item">
+                  <hr />
+                  <div class="d-flex col-8" id="product">
                     <img
-                      src="${image}";
+                      src="${image}"
                       class="img-fluid product-image-cart"
                     />
                     <p>${title}</p>
@@ -96,14 +97,41 @@ function addItemToCart(price, title, image) {
                       value="1"
                     />
                   </div>
-                
                   <div class="col-2 total">A$100</div>
-                  <button class="col-2 remove-button">remove</button>
+                  <button class="remove-button">remove</button>
+                </div>
                   
                `;
 
   cartRow.innerHTML = cartItemContainer;
   cartItem.append(cartRow);
+  updateCartTotal();
+}
+
+function updateCartTotal() {
+  let cartItemsContainer = document.getElementsByClassName(
+    "container-cart-items"
+  )[0];
+  let cartItems = cartItemsContainer.getElementsByClassName("cart-item");
+  total = 0;
+
+  for (let i = 0; i < cartItems.length; i++) {
+    let cartItem = cartItems[i];
+
+    let cartItemPrice = cartItem.getElementsByClassName("cart-price")[0];
+
+    let cartItemQuantity = cartItem.getElementsByClassName("item-quantity")[0];
+
+    let price = parseFloat(cartItemPrice.innerHTML.replace("A$", ""));
+
+    let quantity = cartItemQuantity.value;
+
+    total = total + price * quantity;
+    console.log(total);
+  }
+  let totalElement = document.getElementsByClassName("cart-total")[0];
+
+  totalElement.innerHTML = Math.round(total * 100) / 100;
 }
 
 let addToCartButton = document.getElementsByClassName("add-to-cart-button");
